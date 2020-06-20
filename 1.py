@@ -11,8 +11,8 @@ for i in range(20):
     tile_map[str(i + 3) + ';20'] = [i + 3, 20, (255, 0, 0)]
 for i in range(5):
     tile_map['3;'+str(i+15)] = [3,i+15,(255, 0, 0)]
-    for i in range(5):
-        tile_map['22;'+str(i+15)] = [22,i+15,(255, 0, 0)]
+for i in range(5):
+    tile_map['22;'+str(i+15)] = [22,i+15,(255, 0, 0)]
 clicking = False
 while True:
     screen.fill((0,0,0))
