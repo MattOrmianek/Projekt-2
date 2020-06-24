@@ -27,7 +27,7 @@ time= 0
 radius = 120
 offset = 300
 wave_list = []
-ITERATIONS = 5
+ITERATIONS = 10
 
 run=True
 while run:
@@ -51,7 +51,7 @@ while run:
         pygame.draw.circle(screen, gray, (old_x, old_y), int(radius) ,2)
 
         pygame.draw.line(screen, black, (old_x, old_y), (x,y) , 3)
-        pygame.draw.circle(screen, green, (x,y), 5)
+        pygame.draw.circle(screen, (50, 168, 66), (x,y), 5)
 
     wave_list.insert(0, y)
     if len(wave_list) > 1000:
@@ -60,7 +60,7 @@ while run:
     pygame.draw.line(screen, gray, (x,y), (pos_x+offset, wave_list[0]), 3)
 
     for index in range(len(wave_list)):
-        pygame.draw.circle(screen, gray2, (index + pos_x + offset, wave_list[index]), 3)
+        pygame.draw.circle(screen, (149, 166, 151), (index + pos_x + offset, wave_list[index]), 3)
     time += 0.01
 
     pygame.display.update()

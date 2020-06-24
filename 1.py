@@ -21,7 +21,7 @@ while True:
         for i in range(10):
             particles.append([[mx, my], [random.randint(0, 42) / 6 - 3.5, random.randint(0, 42) / 6 - 3.5], random.randint(4, 6)])
  
-  for particle in particles:
+    for particle in particles:
         particle[0][0] += particle[1][0]
         loc_str = str(int(particle[0][0] / TILE_SIZE)) + ';' + str(int(particle[0][1] / TILE_SIZE))
         if loc_str in tile_map:
