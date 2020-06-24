@@ -21,7 +21,24 @@ while True:
         for i in range(10):
             particles.append([[mx, my], [random.randint(0, 42) / 6 - 3.5, random.randint(0, 42) / 6 - 3.5], random.randint(4, 6)])
  
- #stworzyć kod dla tworzenia particles
+  for particle in particles:
+        particle[0][0] += particle[1][0]
+        loc_str = str(int(particle[0][0] / TILE_SIZE)) + ';' + str(int(particle[0][1] / TILE_SIZE))
+        if loc_str in tile_map:
+            particle[1][0] = -0.7 * particle[1][0]
+            particle[1][1] *= 0.95
+            particle[0][0] += particle[1][0] * 2
+        particle[0][1] += particle[1][1]
+        loc_str = str(int(particle[0][0] / TILE_SIZE)) + ';' + str(int(particle[0][1] / TILE_SIZE))
+        if loc_str in tile_map:
+            particle[1][1] = -0.7 * particle[1][1]
+            particle[1][0] *= 0.95
+            particle[0][1] += particle[1][1] * 2
+        particle[2] -= 0.035
+        particle[1][1] += 0.15
+        pygame.draw.circle(screen, (255, 255, 255), [int(particle[0][0]), int(particle[0][1])], int(particle[2]))
+        if particle[2] <= 0:
+            particles.remove(particle)
 
  
     for tile in tile_map:
